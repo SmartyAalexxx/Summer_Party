@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Arvo:700i|Open+Sans:400,700,800&display=swap');
-@import 'normalize';
-@import 'mixins.scss';
-
-$text-color: #dc2a4c;
-$brand-color: #ffcd18;
-///font-family: 'Open Sans', ;
-///font-family: 'Arvo', ;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+@import 'mixins';
+@import 'varibles';
 
 
 * {
@@ -15,15 +10,16 @@ $brand-color: #ffcd18;
 html {
     height: 100%;
     font-size: 10px;
+    font: 400 10px/1.4 'Open Sans', sans-serif;
     scroll-behavior: smooth;
     @media screen and (max-width: 1024px) {
         font-size: 12px;
     }
+    scroll-behavior: smooth;
 }
 
 body {
     min-height: 100%;
-    font: 400 1.4rem/1.8 'Open Sans', sans-serif;
     color: $text-color;
 }
 
@@ -41,10 +37,11 @@ body {
 .header{
     min-height: 100vh;
     background-image: url(../img/bg-hero.png);
+    z-index: 0;
     background-position: center;
     background-size: cover;
     padding: 40px 10px 10px;
-    font: 700 3rem/1.8 'Open Sans', sans-serif;
+    font: 700 2.8rem/1.2 'Open Sans', sans-serif;
     text-transform: uppercase;
 }
 a{
@@ -70,8 +67,51 @@ a{
     }
     &__item{
         display: inline-block;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        transform: scale(.9);
         padding: 0% 20px;
+        
+        @include hover{
+            border-left: 2px solid $text-color;
+            border-right: 2px solid $text-color;
+            transform: scale(1);
+        }
     }
 
 }
 
+.hero{
+    width: 100%;
+    display: flex;
+    padding: 150px 5px 30px;
+    justify-content: center;
+    &__empty{
+        width: 50%;
+    }
+    &__block{
+        text-align: center;}
+    &__title{
+        margin: 0;
+        font: 700 8rem/.9 'HouseSlant', sans-serif;
+    }
+    &__subtitle{
+        font: 400 2rem/1.1 'Open Sans', sans-serif;
+        text-transform: none;
+    }
+    &__button{
+        display: inline-block;
+        font: 700 2rem/1.1 'Open Sans', sans-serif;
+        color: $text-color;
+        background-color: #fff;
+        border: 2px solid #fff;
+        border-radius: 30px;
+        padding: 15px 55px;
+        margin: 30px 0;
+        @include hover{
+            background-color: transparent;
+            color: #fff;
+            border-color: $text-color;
+        }
+    }
+}
