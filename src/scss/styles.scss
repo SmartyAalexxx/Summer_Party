@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
 @import 'mixins';
+@import 'normalize';
 @import 'varibles';
 
 
@@ -11,12 +12,12 @@ html {
     height: 100%;
     font-size: 10px;
     scroll-behavior: smooth;
-    background-color: #fff;
-    z-index: -2;
     // @media screen and (max-width: 1024px) {
         //     font-size: 12px;
         // }
         scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
     }
     
 body {
@@ -38,7 +39,7 @@ body {
     min-height: 100vh;
     padding: 40px 0 0;
     text-transform: uppercase;
-    overflow: hidden;
+    // overflow: hidden;
     background-image: url(../img/bg-hero.png);
     z-index: 2;
     background-position: center;
@@ -110,7 +111,7 @@ a{
         font: 400 2rem/1.1 'Open Sans', sans-serif;
         text-transform: none;
     }
-    &__button{
+    &__btn{
         display: inline-block;
         font: 700 2rem/1.1 'Open Sans', sans-serif;
         color: $text-color;
@@ -129,18 +130,6 @@ a{
     position: absolute;
     z-index: -1;
     overflow: hidden;
-        // &--1{
-        //     z-index: -1;
-        //     display: inline-block;
-        //     width: 227px;
-        //     height: 219px;
-        //     right: -4%;
-        //     bottom: 12%;
-        //     background-image: 
-        //     overflow: hidden;
-            
-
-        // }
         &--2{
             display: inline-block;
             width: 126px;
@@ -148,12 +137,17 @@ a{
             z-index: -2;
             background-image: url(../img/figure2.png);
             right: 8%;
-            bottom: 12%;
-           
+            bottom: 12%;           
         }
         &--3{
-            left: -40%;
-            bottom: -70%;
+            right: 82%;
+            bottom: -54%;
+            z-index: -2;
         }
     }
+}
+
+
+.about{
+    z-index: 1;
 }
