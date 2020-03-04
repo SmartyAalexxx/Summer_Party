@@ -1,4 +1,7 @@
-(function(){
+;(function(){
     'use strict'
-   console.log("loaded")
-})();
+   
+
+    alert("Loading?")
+
+})

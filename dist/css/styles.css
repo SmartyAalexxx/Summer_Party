@@ -340,20 +340,22 @@ body {
 .header {
   position: relative;
   min-height: 100vh;
-  padding: 40px 0 0;
+  padding: 40px 0 150px;
   text-transform: uppercase;
+  margin-bottom: 150px;
   background-image: url(../img/bg-hero.png);
-  z-index: 2;
   background-position: center;
   background-size: cover; }
   .header::after {
     position: absolute;
-    content: url(../img/figure0.png);
+    overflow: hidden;
+    content: "";
+    background-image: url(../img/dots-yell.png);
     z-index: -1;
     display: inline-block;
     width: 227px;
     height: 219px;
-    right: -4%;
+    right: 0%;
     bottom: 12%; }
 
 a {
@@ -398,6 +400,24 @@ a {
       -o-transform: scale(1);
       transform: scale(1); }
 
+.btn {
+  display: inline-block;
+  text-transform: uppercase;
+  font: 700 2rem/1.1 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #dc2a4c;
+  border: 2px solid #dc2a4c;
+  border-radius: 30px;
+  padding: 15px 55px;
+  margin: 30px 0;
+  -webkit-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  transition: all .4s ease-in; }
+  .btn:hover, .btn:active, .btn:active {
+    background-color: transparent;
+    color: #fff;
+    border-color: #dc2a4c; }
+
 .hero {
   width: 100%;
   display: -webkit-box;
@@ -418,21 +438,9 @@ a {
     font: 400 2rem/1.1 'Open Sans', sans-serif;
     text-transform: none; }
   .hero__btn {
-    display: inline-block;
-    font: 700 2rem/1.1 'Open Sans', sans-serif;
     color: #dc2a4c;
     background-color: #fff;
-    border: 2px solid #fff;
-    border-radius: 30px;
-    padding: 15px 55px;
-    margin: 30px 0;
-    -webkit-transition: all .4s ease-in;
-    -o-transition: all .4s ease-in;
-    transition: all .4s ease-in; }
-    .hero__btn:hover, .hero__btn:active, .hero__btn:active {
-      background-color: transparent;
-      color: #fff;
-      border-color: #dc2a4c; }
+    border: 2px solid  #fff; }
   .hero__img {
     position: absolute;
     z-index: -1;
@@ -442,13 +450,47 @@ a {
       width: 126px;
       height: 109px;
       z-index: -2;
-      background-image: url(../img/figure2.png);
-      right: 8%;
-      bottom: 12%; }
+      background-image: url(../img/doub-circ.png);
+      right: 12%;
+      top: 80%; }
     .hero__img--3 {
-      right: 82%;
-      bottom: -54%;
-      z-index: -2; }
+      max-width: 50vh;
+      top: 70%;
+      right: 90%; }
 
 .about {
-  z-index: 1; }
+  position: relative;
+  z-index: 1;
+  margin-bottom: 150px; }
+  .about__title {
+    margin: 0;
+    font: 700 6rem/.9 'HouseSlant', sans-serif;
+    text-align: center; }
+  .about__subtitle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .about__text {
+    padding: 50px 25px;
+    width: 48%;
+    font-size: 2rem; }
+  .about__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .about__img {
+    position: absolute; }
+    .about__img--blue-d {
+      top: 80%;
+      left: 0%; }
+    .about__img--doub-c {
+      top: 115%;
+      left: 25%;
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg); }

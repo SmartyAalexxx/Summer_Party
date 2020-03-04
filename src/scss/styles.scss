@@ -37,21 +37,27 @@ body {
 .header{
     position: relative;
     min-height: 100vh;
-    padding: 40px 0 0;
+    padding: 40px 0 150px;
     text-transform: uppercase;
-    // overflow: hidden;
+    // overflow: hidden; // без него картинка отображаться ниже
+    margin-bottom: 150px;    
     background-image: url(../img/bg-hero.png);
-    z-index: 2;
     background-position: center;
     background-size: cover;
+    
+    
     &::after{
         position: absolute;
-        content: url(../img/figure0.png);
+        overflow: hidden;
+        content: "";
+        background-image: url(../img/dots-yell.png);
         z-index: -1;
+        
+        
         display: inline-block;
         width: 227px;
         height: 219px;
-        right: -4%;
+        right: 0%;
         bottom: 12%;
     }
 }
@@ -92,6 +98,23 @@ a{
     }
 
 }
+.btn{
+    display: inline-block;
+    text-transform: uppercase;
+
+    font: 700 2rem/1.1 'Open Sans', sans-serif;
+    color: #fff;
+    background-color: $text-color;
+    border: 2px solid $text-color;
+    border-radius: 30px;
+    padding: 15px 55px;
+    margin: 30px 0;
+    @include hover{
+        background-color: transparent;
+        color: #fff;
+        border-color: $text-color;
+    }
+}
 
 .hero{
     width: 100%;
@@ -112,19 +135,9 @@ a{
         text-transform: none;
     }
     &__btn{
-        display: inline-block;
-        font: 700 2rem/1.1 'Open Sans', sans-serif;
         color: $text-color;
         background-color: #fff;
-        border: 2px solid #fff;
-        border-radius: 30px;
-        padding: 15px 55px;
-        margin: 30px 0;
-        @include hover{
-            background-color: transparent;
-            color: #fff;
-            border-color: $text-color;
-        }
+        border: 2px solid  #fff;
     }
     &__img{
     position: absolute;
@@ -135,19 +148,54 @@ a{
             width: 126px;
             height: 109px;
             z-index: -2;
-            background-image: url(../img/figure2.png);
-            right: 8%;
-            bottom: 12%;           
+            background-image: url(../img/doub-circ.png);
+            right: 12%;
+            top: 80%;           
         }
         &--3{
-            right: 82%;
-            bottom: -54%;
-            z-index: -2;
+            max-width: 50vh;
+            top: 70%;
+            right: 90% ;
         }
     }
 }
 
 
+
 .about{
+    position: relative;
+
     z-index: 1;
+    margin-bottom: 150px;
+    
+    &__title{
+        margin: 0;
+        font: 700 6rem/.9 'HouseSlant', sans-serif;
+        text-align: center;
+    }
+    &__subtitle{
+        display: flex;
+        justify-content: center;
+    }
+    &__text{
+        padding: 50px 25px;
+        width: 48%;
+        font-size: 2rem;
+    }
+    &__btn{
+        display: flex;
+        justify-content: center;
+    }
+    &__img{
+        position: absolute;
+        &--blue-d{
+            top: 80%;
+            left: 0%;
+        }
+        &--doub-c{
+            top: 115%;
+            left: 25%;
+            transform: rotateY(180deg);
+    }
+    }
 }
